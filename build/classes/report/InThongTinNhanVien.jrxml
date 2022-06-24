@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InThongTinNhanVien" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4f3dc061-d14b-403f-936d-87155cdf4f0e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DS_NhanVien" uuid="88d92160-d7bf-4e27-a7d7-2db35ec21263">
+		<queryString language="SQL">
+			<![CDATA[select * from nhanvien]]>
+		</queryString>
+		<field name="HOTENNV" class="java.lang.String"/>
+		<field name="MANV" class="java.lang.String"/>
+		<field name="GIOITINH" class="java.lang.String"/>
+		<field name="NGAYSINH" class="java.sql.Timestamp"/>
+		<field name="DIACHI" class="java.lang.String"/>
+		<field name="SDT" class="java.lang.String"/>
+		<field name="CHUCVU" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="DS_NhanVien1" uuid="72297cb2-88db-4864-b13e-3dba9a027cb6">
+		<queryString language="SQL">
+			<![CDATA[select * from nhanvien]]>
+		</queryString>
+		<field name="MANV" class="java.lang.String"/>
+		<field name="MANQL" class="java.lang.String"/>
+		<field name="MATK" class="java.lang.String"/>
+		<field name="HOTENNV" class="java.lang.String"/>
+		<field name="GIOITINH" class="java.lang.String"/>
+		<field name="NGAYSINH" class="java.sql.Timestamp"/>
+		<field name="DIACHI" class="java.lang.String"/>
+		<field name="SDT" class="java.lang.String"/>
+		<field name="LUONG" class="java.math.BigDecimal"/>
+		<field name="NGAYVAOLAM" class="java.sql.Timestamp"/>
+		<field name="CHUCVU" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="DSNV" uuid="5937095f-f0ac-48c3-87ce-4de84225f3e5">
+		<queryString language="SQL">
+			<![CDATA[select * from nhanvien]]>
+		</queryString>
+		<field name="MANV" class="java.lang.String"/>
+		<field name="MANQL" class="java.lang.String"/>
+		<field name="MATK" class="java.lang.String"/>
+		<field name="HOTENNV" class="java.lang.String"/>
+		<field name="GIOITINH" class="java.lang.String"/>
+		<field name="NGAYSINH" class="java.sql.Timestamp"/>
+		<field name="DIACHI" class="java.lang.String"/>
+		<field name="SDT" class="java.lang.String"/>
+		<field name="LUONG" class="java.math.BigDecimal"/>
+		<field name="NGAYVAOLAM" class="java.sql.Timestamp"/>
+		<field name="CHUCVU" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="New Dataset 1" uuid="1c7280e5-aabe-4527-808c-ade342036ea1">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM NHANVIEN]]>
+		</queryString>
+		<field name="MANV" class="java.lang.String"/>
+		<field name="MANQL" class="java.lang.String"/>
+		<field name="MATK" class="java.lang.String"/>
+		<field name="HOTENNV" class="java.lang.String"/>
+		<field name="GIOITINH" class="java.lang.String"/>
+		<field name="NGAYSINH" class="java.sql.Timestamp"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[select * from nhanvien]]>
+	</queryString>
+	<field name="MANV" class="java.lang.String"/>
+	<field name="MANQL" class="java.lang.String"/>
+	<field name="MATK" class="java.lang.String"/>
+	<field name="HOTENNV" class="java.lang.String"/>
+	<field name="GIOITINH" class="java.lang.String"/>
+	<field name="NGAYSINH" class="java.sql.Timestamp"/>
+	<field name="DIACHI" class="java.lang.String"/>
+	<field name="SDT" class="java.lang.String"/>
+	<field name="LUONG" class="java.math.BigDecimal"/>
+	<field name="NGAYVAOLAM" class="java.sql.Timestamp"/>
+	<field name="CHUCVU" class="java.lang.String"/>
+	<variable name="HOTENNV_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{HOTENNV}]]></variableExpression>
+	</variable>
+	<variable name="MANV_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{MANV}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="555" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="162" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="160" backcolor="#666666" uuid="31647a92-4e32-4260-b2a7-72c8b559f9e3"/>
+				<staticText>
+					<reportElement x="170" y="15" width="443" height="60" forecolor="#CCCC00" uuid="5fa33918-9ee4-4a49-a798-54ecff592731"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="48" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Danh sách nhân viên]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="470" y="109" width="311" height="36" forecolor="#CCCC00" uuid="dd6aafd8-561c-49df-8b21-e5392d448d02"/>
+					<textElement textAlignment="Right">
+						<font size="28"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="90" width="802" height="7" uuid="a41aa140-db5b-4311-860e-42c2bf4dae03"/>
+				</frame>
+				<image>
+					<reportElement x="45" y="97" width="238" height="61" uuid="3cf15d38-4ad1-4819-8957-81c6527de04e"/>
+					<imageExpression><![CDATA["D:\\UIT\\java\\project\\DoAnCinemas\\src\\Anh_Report\\Emperor (1).png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 9" style="table 9" x="0" y="19" width="802" height="32" uuid="3250e9b6-7f13-4993-823e-1d5a70a0e823"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DS_NhanVien" uuid="d1ef7022-ccaf-4a5e-a029-97d2904f394c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="139" uuid="ca50f175-30c1-4253-9548-cadff5fa9ed6">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="81093df9-e753-4465-a9aa-e8ee75fe803f"/>
+								<text><![CDATA[HOTENNV]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="139" height="20" uuid="596ef395-3210-4644-87db-d269db63fdbf"/>
+								<textFieldExpression><![CDATA[$F{HOTENNV}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="107" uuid="3c5397e5-cae1-4be5-8796-baa89222ed31">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="515cfd29-b4cd-4bca-86f5-6ff0141944b9"/>
+								<text><![CDATA[MANV]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="107" height="20" uuid="d5d6684a-6a1b-4588-9dcb-fadd9ee4d2ac"/>
+								<textFieldExpression><![CDATA[$F{MANV}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="98" uuid="3fc4b1dd-f069-4c4c-b8ec-6827548f9ca5">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="32e3f7e7-259a-4b7e-bb91-d44f92ccb977"/>
+								<text><![CDATA[GIOITINH]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="03e3eb0a-37ac-4cab-82a0-28fc79e89231"/>
+								<textFieldExpression><![CDATA[$F{GIOITINH}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="106" uuid="c40bad4e-49e9-435e-973c-dc1069333273">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="7e858f31-329c-4ae8-85f5-5d50b48d91ee"/>
+								<text><![CDATA[NGAYSINH]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField pattern="dd/MM/yyyy">
+								<reportElement x="0" y="0" width="90" height="20" uuid="d48e9f67-d5a5-4c52-bd76-b0c131b2e1fd"/>
+								<textFieldExpression><![CDATA[$F{NGAYSINH}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="112" uuid="794da360-c7be-4f35-9791-f71d0a2cf7f2">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c110066e-56aa-4b9b-8d4b-2d7fb1e3484a"/>
+								<text><![CDATA[DIACHI]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="112" height="20" uuid="80235088-3dc1-491a-9694-1e19151a5b87"/>
+								<textFieldExpression><![CDATA[$F{DIACHI}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="113" uuid="2e4b2253-2ca5-4453-b9d5-8901190ac289">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="33e9acb8-7cad-42da-ba4b-6a43000a571b"/>
+								<text><![CDATA[SDT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="ad4dd978-d488-456c-b5f6-79c06a544ce3"/>
+								<textFieldExpression><![CDATA[$F{SDT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="123" uuid="26c74ed9-5e05-4a4e-a12f-846e98ed0271">
+						<jr:columnHeader style="table 9_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="b4382aa0-003c-424e-a0da-46d8250970d1"/>
+								<text><![CDATA[CHUCVU]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_CH" height="31" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="113" height="20" uuid="27aef4ca-a530-4711-802a-123e609420ae"/>
+								<textFieldExpression><![CDATA[$F{CHUCVU}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="241" y="0" width="211" height="35" uuid="d907e45e-63b6-4581-8de8-5c2c0f2749f3"/>
+				<textElement>
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tổng nhân viên: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="0" width="100" height="35" uuid="086b38fc-28ac-4fb1-9383-ad1e750aeb42"/>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{MANV_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

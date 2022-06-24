@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TopPhimTheoThang" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4193811c-83ce-4521-93aa-eed762415e15">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1" uuid="2250e8a9-4a12-4e93-83a4-76fc9a574744"/>
+	<subDataset name="Table Dataset 1" uuid="43f1a327-103e-407e-88ac-a78e2b298ed5"/>
+	<subDataset name="New Dataset 1" uuid="16d56985-ac09-4f73-8f97-9e175bb3f67c"/>
+	<parameter name="Thang" class="java.lang.String"/>
+	<parameter name="Nam" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select*
+   FROM( select sc.maphim ,p.tenphim, count(p.maphim) as SOVE
+         from datve dv , suatchieu sc, phim p
+         where dv.MASC = sc.MASC and sc.MAPHIM = p.MAPHIM and extract(month from ngaychieu) = $P{Thang}  AND extract(year from ngaychieu)= $P{Nam}
+         group by sc.MAPHIM,p.tenphim
+         order by count(dv.masc) desc)
+ WHERE ROWNUM <= 3]]>
+	</queryString>
+	<field name="MAPHIM" class="java.lang.String"/>
+	<field name="TENPHIM" class="java.lang.String"/>
+	<field name="SOVE" class="java.math.BigDecimal"/>
+	<background>
+		<band height="555" splitType="Stretch">
+			<image>
+				<reportElement x="202" y="317" width="397" height="158" uuid="4a477549-89f6-4af9-9562-ff3422d3189f"/>
+				<imageExpression><![CDATA["D:\\UIT\\java\\project\\DoAnCinemas\\src\\Anh_Report\\Emperor (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="160" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="160" backcolor="#666666" uuid="d85162db-ddc5-4fa6-8a3b-c3add7b5864f"/>
+				<staticText>
+					<reportElement x="0" y="14" width="802" height="59" forecolor="#CCCC00" uuid="f3755cee-0f11-42da-b71b-54f4c136a82d"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="48" isBold="false"/>
+					</textElement>
+					<text><![CDATA[TOP PHIM VỀ LƯỢNG XEM]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="444" y="110" width="311" height="36" forecolor="#CCCC00" uuid="048e4fd8-2f6e-4477-a2a2-36cc93e8832c"/>
+					<textElement textAlignment="Right">
+						<font size="28"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<frame>
+					<reportElement mode="Opaque" x="0" y="85" width="802" height="7" uuid="2e11d162-11d0-4135-865f-2bec8cfe90d0"/>
+				</frame>
+				<image>
+					<reportElement x="67" y="92" width="238" height="68" uuid="de69f8b4-a2bd-4d4e-bb7f-b6d5a8e95c6c"/>
+					<imageExpression><![CDATA["D:\\UIT\\java\\project\\DoAnCinemas\\src\\Anh_Report\\Emperor (1).png"]]></imageExpression>
+				</image>
+				
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="43" backcolor="#C6C0C0" uuid="0476419c-ab24-40c6-b400-4c5ea4321e04"/>
+				<staticText>
+					<reportElement x="655" y="4" width="100" height="32" uuid="26f7e5ba-2161-45fd-be7b-7e220307934b"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[Số vé]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="36" uuid="a8864dd7-2999-49bf-bcd5-eb619ac5f3f7"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[Mã Phim]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="253" y="0" width="100" height="32" uuid="3b922185-c17f-4ed2-b9a1-c2b920b9cf9d"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[Tên Phim]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="802" height="34" backcolor="#FFFFFF" uuid="f33be8cd-0957-421f-a80b-8ce1612a6f23"/>
+				<textField>
+					<reportElement x="253" y="2" width="402" height="32" uuid="6c8780a5-57dc-4144-b747-36e6474147bc"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TENPHIM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="171" height="32" uuid="db59ddae-b397-4032-91a7-1a69ae366894"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MAPHIM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="655" y="0" width="129" height="34" uuid="c08942fd-0c52-45ad-bd33-f2c8939b8cbc"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SOVE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
