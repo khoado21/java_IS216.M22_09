@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket" language="groovy" pageWidth="499" pageHeight="612" orientation="Landscape" columnWidth="459" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0128e479-d223-46cc-9933-f7b628e72f13">
+	<property name="ireport.zoom" value="2.143588810000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="40"/>
+	<style name="style1">
+		<conditionalStyle>
+			<style/>
+		</conditionalStyle>
+	</style>
+	<parameter name="ghe" class="java.lang.String"/>
+	<parameter name="masc" class="java.lang.String"/>
+	<parameter name="maghe" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select  SC.thoigianchieu, SC.ngaychieu, P.thoiluong, P.tenphim, LP.hinhthuc, SC.marap
+from SUATCHIEU SC, LOAIPHIM LP, PHIM P, DATVE DV
+where SC.masc = DV.masc and SC.maphim = P.maphim and P.malp = LP.malp
+and DV.masc = $P{masc} and DV.maghe = $P{maghe}]]>
+	</queryString>
+	<field name="THOIGIANCHIEU" class="java.lang.String"/>
+	<field name="NGAYCHIEU" class="java.sql.Timestamp"/>
+	<field name="THOILUONG" class="java.math.BigDecimal"/>
+	<field name="TENPHIM" class="java.lang.String"/>
+	<field name="HINHTHUC" class="java.lang.String"/>
+	<field name="MARAP" class="java.lang.String"/>
+	<title>
+		<band/>
+	</title>
+	<columnHeader>
+		<band height="251">
+			<image>
+				<reportElement x="0" y="0" width="459" height="251" uuid="d97d0a93-dba0-4fab-ada7-0f2ba4f8f086"/>
+				<imageExpression><![CDATA["D:\\UIT\\java\\project\\DoAnCinemas\\src\\report\\MicrosoftTeams-image (2).png"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement x="34" y="37" width="398" height="164" uuid="daf3ec8f-d2fc-4902-ac03-b7ccfc7520cd"/>
+				<textField>
+					<reportElement x="96" y="84" width="21" height="16" uuid="20b4027b-4722-4eb7-927c-5b904a251607"/>
+					<textElement>
+						<font size="10" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{THOILUONG}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="146" y="84" width="114" height="16" uuid="cd61cc69-219e-4f18-92f5-226f4a4d91b3"/>
+					<textElement>
+						<font size="10" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{HINHTHUC}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="97" y="99" width="62" height="16" uuid="de71f228-8093-4e88-9ab8-b99a1a67fad7"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Ngay Chieu]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="97" y="115" width="50" height="16" uuid="778a4132-da6f-44ff-9974-696729275fb0"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NGAYCHIEU}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="159" y="99" width="69" height="16" uuid="f3304cd5-40f4-41b7-8a38-61a1dfb25561"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Gio Chieu]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="159" y="115" width="69" height="16" uuid="41246ff5-373a-4fd6-b1bb-2e0141626d06"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{THOIGIANCHIEU}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="228" y="99" width="56" height="16" uuid="dda8d439-d5bf-4c9b-b32d-019f1b4d2720"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Rap / Phong]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="228" y="115" width="56" height="16" uuid="1874a9fb-f6bd-4676-a36e-80dd810ac030"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MARAP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="96" y="55" width="176" height="28" uuid="a4ee5afb-0db5-4517-9ed5-d75ea147c0b8"/>
+					<textElement>
+						<font fontName="Arial Black" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TENPHIM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="117" y="84" width="29" height="16" uuid="bde1706e-e024-43a7-b823-73086711972b"/>
+					<textElement>
+						<font size="10" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Phút -  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="97" y="135" width="21" height="20" uuid="79e07d86-c4a6-407f-9746-d383b66342c8"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Ghe:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="128" y="131" width="100" height="20" uuid="f648f1db-9d43-49d3-895f-1c5338928ee4"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{ghe}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="320" y="24" width="24" height="16" uuid="b7ae88b7-b396-4562-8f11-18f97010b0e6"/>
+					<textElement>
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[RAP:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="320" y="40" width="24" height="16" uuid="c8ec54d6-d4f9-45c0-9cb5-bf374cf83668"/>
+					<textElement>
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[GHE:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="344" y="37" width="46" height="16" uuid="775008f2-2374-4955-b042-bb02823d833d"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{ghe}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="344" y="21" width="46" height="16" uuid="02ed3862-7d0b-431c-977b-a81c70ebd0de"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MARAP}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="328" y="106" width="62" height="16" uuid="9b1f295c-05d4-4636-830c-6bd7f2cb4354"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[NGAY : GIO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="328" y="122" width="42" height="20" uuid="4d45d05d-35f9-4a80-b6db-b5c6f3e55ef9"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NGAYCHIEU}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="328" y="137" width="42" height="18" uuid="9ad6f730-34b1-44e9-8600-8d6d16d79e47"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{THOIGIANCHIEU}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnHeader>
+</jasperReport>
