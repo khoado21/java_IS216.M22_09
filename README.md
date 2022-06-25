@@ -13,3 +13,4 @@
 5. Mở project đã clone từ repo về trên netbeans
 6. Add các thư viện jar trong folder LibraryProject theo dạng Absolute Path
 7. Log in với tài khoản nhân viên với username: phong, password: phong hoặc tài khoản quản lý với username: khoa, password: khoa
+8. Sửa lại đường dẫn hình ảnh ở các file report
