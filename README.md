@@ -10,7 +10,8 @@
 2. Tạo một database trên oracle 
 3. Sử dụng file Cinemas_DBMS.sql để tạo cơ sở dữ liệu và insert dữ liệu
 4. Vào properties của project, ở tab run trong phần VM Options, thêm câu lệnh: --add-opens=java.base/java.lang=ALL-UNNAMED
-5. Mở project đã clone từ repo về trên netbeans
-6. Add các thư viện jar trong folder LibraryProject theo dạng Absolute Path
-7. Sửa lại đường dẫn hình ảnh ở các file report
-8. Log in với tài khoản nhân viên với username: phong, password: phong hoặc tài khoản quản lý với username: khoa, password: khoa
+5. Chỉnh sửa user và password trong file JDBCConnection đúng với oracle của người dùng
+6. Mở project đã clone từ repo về trên netbeans
+7. Add các thư viện jar trong folder LibraryProject theo dạng Absolute Path
+8. Sửa lại đường dẫn hình ảnh ở các file report
+9. Log in với tài khoản nhân viên với username: phong, password: phong hoặc tài khoản quản lý với username: khoa, password: khoa
